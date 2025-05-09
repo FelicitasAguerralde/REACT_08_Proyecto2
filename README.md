@@ -1,3 +1,13 @@
+# Proyecto de Página web personal utilizando React
+Para ejecutar el fronted utilizar **npm start** (puerto 3000)
+Para ejecutar el servidor (puerto 5000), abrir una terminal en el directorio donde está el archivo index.js y ejecutar:  **node index.js**
+
+## Envío de formulario
+La página Contacto, cuenta con un formulario de contacto que permite a un usuario enviar su nombre, email y mensaje a través de una API.
+El servidor web se crea con Node.js y Express expone un endpoint (/api/send-email) para recibir mensajes desde el formulario de contacto. Al recibir los datos (name, email, message), el servidor los valida y utiliza nodemailer para enviar un correo electrónico a una cuenta configurada mediante variables de entorno.
+
+También habilita CORS para permitir conexiones desde un frontend (como localhost:3000) y usa dotenv para proteger credenciales sensibles como el usuario y contraseña del correo.
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
