@@ -1,5 +1,5 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
+import { NavLink } from 'react-router-dom'
 
 export const Header = () => {
   return (
@@ -10,13 +10,12 @@ export const Header = () => {
     
     <nav>
         <ul>
-            <li><Link to="/">Inicio</Link></li>
-            <li><Link to="/portfolio">Portfolio</Link></li>
-            <li><Link to="/services">Servicios</Link></li>
-            <li><Link to="/curriculum">Curriculum</Link></li>
-            <li><Link to="/contact">Contacto</Link></li>
+            <li><NavLink to="/" className={({isActive}) => isActive ? 'active' : ''}>Inicio</NavLink></li>
+            <li><NavLink to="/portfolio" className={({isActive}) => isActive ? 'active' : ''}>Portfolio</NavLink></li>
+            <li><NavLink to="/services" className={({isActive}) => isActive ? 'active' : ''}>Servicios</NavLink></li>
+            <li><NavLink to="/curriculum" className={({isActive}) => isActive ? 'active' : ''}>Curriculum</NavLink></li>
+            <li><NavLink to="/contact" className={({isActive}) => isActive ? 'active' : ''}>Contacto</NavLink></li>
         </ul>
-        {console.log('Header component loaded')}
     </nav>
     </header>
   )
