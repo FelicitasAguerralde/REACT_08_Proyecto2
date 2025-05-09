@@ -1,14 +1,20 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 export const Header = () => {
   return (
     <header>
-    <h1> Felicitas Aguerralde</h1>
+      <div className="logo"><span>F</span>
+      <h3> Felicitas Aguerralde Developer</h3>
+      </div>
+    
     <nav>
         <ul>
-            <li><a href="#about">About</a></li>
-            <li><a href="#projects">Projects</a></li>
-            <li><a href="#contact">Contact</a></li>
+            <li><Link to="/">Inicio</Link></li>
+            <li><Link to="/portfolio">Portfolio</Link></li>
+            <li><Link to="/services">Servicios</Link></li>
+            <li><Link to="/curriculum">Curriculum</Link></li>
+            <li><Link to="/contact">Contacto</Link></li>
         </ul>
         {console.log('Header component loaded')}
     </nav>
