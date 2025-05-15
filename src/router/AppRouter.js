@@ -1,18 +1,18 @@
 import React from "react";
-import { Routes, Route, BrowserRouter, Navigate } from "react-router-dom";
+import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
+import { AboutMe } from "../components/AboutMe";
+import { Contact } from "../components/Contact";
+import { Curriculum } from "../components/Curriculum";
+import { Footer } from "../components/Footer";
 import { Index } from "../components/Index";
+import Nav from "../components/Nav";
 import { Portfolio } from "../components/Portfolio";
 import { Services } from "../components/Services";
-import { Curriculum } from "../components/Curriculum";
-import { Contact } from "../components/Contact";
-import { Header } from "../components/Header";
-import { Footer } from "../components/Footer";
-import { AboutMe } from "../components/AboutMe";
 
 export const AppRouter = () => {
   return (
     <BrowserRouter>
-      <Header />
+      <Nav />
       <section className="content">
         <Routes>
           <Route path="/" element={<Index />} />

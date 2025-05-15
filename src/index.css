@@ -45,7 +45,7 @@ body {
   margin: 0 auto;
 }
 
-.index .about-me, nav, footer{
+.index .about-me, .my-works, nav, footer{
   padding-left: 5%;
   padding-right: 5%;
   margin-bottom: 0%;
@@ -95,29 +95,29 @@ li{
   margin-left: 40px;
 }
 
-header nav ul{
+nav ul{
   border-bottom: 3px;
   margin-bottom: 35px;
 }
 
-header .logo{
+nav .logo{
   flex-grow: 2;
   display: flex;
   align-items:flex-start;
 }
 
-header .logo span{
+nav .logo span{
   font-family: var(--font-h2);
   display: block;
   font-size: 48px;
   color: var(--color-primary);
 }
 
-header nav{
+nav{
   flex-grow: 1;
 }
 
-header nav ul{
+nav ul{
   display: flex;
   justify-content: space-around;
   align-items: center;
@@ -125,12 +125,12 @@ header nav ul{
   font-size: 16px;
 }
 
-header li{
+nav li{
   font-weight: bold;
   font-size: 18px;
 }
 
-header li a{
+nav li a{
   text-decoration: none;
   color: #000;
   transition: all 0.3s ease;
@@ -157,6 +157,13 @@ nav a:hover {
   box-shadow: 0 -5px 10px rgba(0, 0, 0, 0.05);
 }
 
+.three-points::after {
+  content: '\2026';
+  font-size: 6em;
+  color: var(--color-body);
+  margin-top: 0%;
+}
+
 .index .about-me .column-left{
   width: 45%;
 }
@@ -165,7 +172,7 @@ nav a:hover {
   width: 55%;
 }
 
-.index .about-me .column-right, 
+.index .about-me .column-right,
 .index .about-me .column-left{
   padding: 5%;
 }
@@ -184,16 +191,91 @@ nav a:hover {
 
 .index .about-me .column-left .asterisk{
   position: absolute;
-  top: 80%;
+  top: 85%;
   left: 33%;
   width: 80px;
   height: 80px;
+  display: inline-block;
+  animation:  rotarVariable 6s linear infinite;
+}
+
+@keyframes rotarVariable {
+  0% { transform: rotate(0deg); }
+  25% { transform: rotate(45deg); }
+  50% { transform: rotate(-30deg); }
+  75% { transform: rotate(90deg); }
+  100% { transform: rotate(0deg); }
 }
 
 .arrow-unicode {
   text-align: right;
-  font-size: 4dvi;
+  font-size: 4dvi !important;
   color: var(--color-body);
+}
+
+/*---------------My Works---------------*/
+
+.my-works{
+  display: flex;
+  flex-direction: column;
+  background-image: url(./assets/img/background-my-works.jpg);
+}
+
+.my-works-container{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.my-works-container img{
+  display: flex;
+  width: 20%;
+  height: 300px;
+  object-fit: cover;
+  object-position: top;
+  overflow: hidden;
+  text-align: center;
+  margin-right: 20px;
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
+  border-radius: 8px;
+}
+
+.my-works .column-bottom{
+  display: flex;
+  flex-direction: row;
+  margin-top: 8%;
+}
+
+.my-works h1{
+  background-image: url(./assets/img/background-my-works-title.jpg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 60%;
+  height: max-content;
+  object-fit: cover;
+  object-position: top;
+  overflow: hidden;
+  text-align: right;
+  padding-right: 10%;
+}
+
+.my-works .column-bottom p{
+  width: 40%;
+  text-align: center;
+  justify-content: center;
+}
+
+.column-bottom-right{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+div.arrow-unicode{
+  height: 40px;
 }
 
 /*---------------Footer---------------*/

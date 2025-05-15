@@ -2,18 +2,26 @@ import React from "react";
 import { Link } from "react-router-dom";
 import asterisk from "../assets/img/asterisk.svg";
 import profile from "../assets/img/profile.jpg";
+import work1 from "../assets/img/work1.png";
+import work2 from "../assets/img/work2.png";
+import work3 from "../assets/img/work3.png";
+import { Header } from "./Header";
 
 export const Index = () => {
   return (
+    <>
+    <Header />
     <div className="index">
       <section className="about-me">
         <aside className="column-left">
-          <h3>Sobre Mí</h3>
-          <img src={asterisk} alt="aterisco" className="asterisk"/>
+          <span className="three-points"></span>
+          <h3>Sobre Mi</h3>
+          <img src={asterisk} alt="aterisco" className="asterisk" />
           <p>
-            ¡Hola! Soy Felicitas Aguerralde, una {" "}
+            ¡Hola! Soy Felicitas Aguerralde, una{" "}
             <strong>desarrolladora de software </strong>
-            apasionada por crear soluciones digitales innovadoras.
+            apasionada por crear soluciones digitales innovadoras. Te invito a
+            conocerme.
           </p>
         </aside>
         <aside className="column-right">
@@ -34,6 +42,24 @@ export const Index = () => {
           </div>
         </aside>
       </section>
+      <section className="my-works">
+        <aside className="column-top">
+        <span className="three-points"></span>
+        <div className="my-works-container">
+        <img src={work1} alt="work1" />
+        <img src={work2} alt="work2" />
+        <img src={work3} alt="work3" />
+        </div>
+        </aside>
+        <aside className="column-bottom">
+        <h1>Mis Proyectos</h1>
+        <p>
+          Te invito a conocer mis proyectos.
+        </p>
+        <div className="arrow-unicode"></div>
+        </aside>
+      </section>
     </div>
+    </>
   );
 };
