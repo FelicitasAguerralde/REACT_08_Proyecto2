@@ -1,14 +1,12 @@
-import React from 'react'
-import { NavLink } from 'react-router-dom'
+import React from 'react';
+import { NavLink } from 'react-router-dom';
 
 export const Header = () => {
   return (
     <header>
-      <div className="logo"><span>F</span>
-      <h3> Felicitas Aguerralde Developer</h3>
-      </div>
-    
     <nav>
+    <div className="logo"><span>FA</span>
+    </div>
         <ul>
             <li><NavLink to="/" className={({isActive}) => isActive ? 'active' : ''}>Inicio</NavLink></li>
             <li><NavLink to="/portfolio" className={({isActive}) => isActive ? 'active' : ''}>Portfolio</NavLink></li>
@@ -17,6 +15,8 @@ export const Header = () => {
             <li><NavLink to="/contact" className={({isActive}) => isActive ? 'active' : ''}>Contacto</NavLink></li>
         </ul>
     </nav>
+    <h1>Felicitas Aguerralde</h1>
+    <h2>Desarrolladora de Software</h2>
     </header>
   )
 }

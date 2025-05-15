@@ -7,6 +7,7 @@ import { Curriculum } from "../components/Curriculum";
 import { Contact } from "../components/Contact";
 import { Header } from "../components/Header";
 import { Footer } from "../components/Footer";
+import { AboutMe } from "../components/AboutMe";
 
 export const AppRouter = () => {
   return (
@@ -19,6 +20,7 @@ export const AppRouter = () => {
           <Route path="/services" element={<Services />} />
           <Route path="/curriculum" element={<Curriculum />} />
           <Route path="/contact" element={<Contact />} />
+          <Route path="/aboutme" element={<AboutMe />} />
           <Route path="*" element={<Navigate to="/" replace />} />
         </Routes>
       </section>
