@@ -12,8 +12,46 @@ import reactIcon from '../assets/img/icon/react.svg'
 import springBootIcon from '../assets/img/icon/springBoot.svg'
 import testIcon from '../assets/img/icon/test.svg'
 import {Collage} from './Collage.js'
+import item from '../assets/img/icon/item.svg'
+import teacher1 from '../assets/img/collage/teacher-1.jpg';
+import teacher10 from '../assets/img/collage/teacher-10.JPG';
+import teacher11 from '../assets/img/collage/teacher-11.jpg';
+import teacher2 from '../assets/img/collage/teacher-2.jpg';
+import teacher3 from '../assets/img/collage/teacher-3.jpg';
+import teacher4 from '../assets/img/collage/teacher-4.jpg';
+import teacher5 from '../assets/img/collage/teacher-5.jpg';
+import teacher6 from '../assets/img/collage/teacher-6.jpg';
+import teacher7 from '../assets/img/collage/teacher-7.jpg';
+import teacher8 from '../assets/img/collage/teacher-8.JPG';
+import teacher9 from '../assets/img/collage/teacher-9.jpg';
+
 
 export const Curriculum = () => {
+
+  const imagesTeacher = [
+    { id: 1, src: teacher1, alt: 'Imagen 1' },
+    { id: 2, src: teacher2, alt: 'Imagen 2' },
+    { id: 3, src: teacher3, alt: 'Imagen 3' },
+    { id: 4, src: teacher4, alt: 'Imagen 4' },
+    { id: 5, src: teacher5, alt: 'Imagen 5' },
+    { id: 6, src: teacher6, alt: 'Imagen 6' },
+    { id: 7, src: teacher7, alt: 'Imagen 7' },
+    { id: 8, src: teacher8, alt: 'Imagen 8' },
+    { id: 9, src: teacher9, alt: 'Imagen 9' },
+    { id: 10, src: teacher10, alt: 'Imagen 10' },
+    { id: 11, src: teacher11, alt: 'Imagen 11' },
+    { id: 12, src: teacher1, alt: 'Imagen 1' },
+    { id: 13, src: teacher2, alt: 'Imagen 2' },
+    { id: 14, src: teacher3, alt: 'Imagen 3' },
+    { id: 15, src: teacher4, alt: 'Imagen 4' },
+    { id: 16, src: teacher5, alt: 'Imagen 5' },
+    { id: 17, src: teacher6, alt: 'Imagen 6' },
+    { id: 18, src: teacher7, alt: 'Imagen 7' },
+    { id: 19, src: teacher8, alt: 'Imagen 8' },
+    { id: 20, src: teacher9, alt: 'Imagen 9' },
+    { id: 21, src: teacher10, alt: 'Imagen 10' },
+    { id: 22, src: teacher11, alt: 'Imagen 11' },
+  ]
   return (
     <div className="page-curriculum">
         <section className="experience">
@@ -21,22 +59,27 @@ export const Curriculum = () => {
           <h1>Experiencia</h1>
           <div className="line"></div>
           <div className="itemExperience">
-            <h4>Marzo 2022 - Actualidad</h4>
-            <h4>UNICEN - Tandil, Buenos Aires, Argentina</h4>
-            <h2>Estudiante Avanzada en Programación</h2>
-            <p>Estudiante de la carrera Técnicatura Universitaria en Desarrollo de Aplicaciones
-              Informáticas. Tengo conocimientos en JAVA, HTML, CSS, Javascript, PHP, MySQL,
-              PostgreSQL, Spring Boot, JUnit, TestNg, React, entre otros. Me apasiona el Frontend.</p>
+            <h5>Marzo 2022 - Actualidad</h5>
+            <h5>UNICEN - Tandil, Buenos Aires, Argentina</h5>
+            <h4>Estudiante Avanzada en Programación</h4>
+            <ul>
+              <li><img src={item} alt="item" className="item-icon" />Estudiante de la carrera Técnicatura Universitaria en Desarrollo de Aplicaciones.</li>
+              <li><img src={item} alt="item" className="item-icon" />Lenguajes de programación: Java, JavaScript, PHP </li>
+              <li><img src={item} alt="item" className="item-icon" />Frontend: HTML, CSS, JavaScript, React</li>
+              <li><img src={item} alt="item" className="item-icon" />Backend y Frameworks: PHP, Spring Boot</li>
+              <li><img src={item} alt="item" className="item-icon" />Base de datos: MySQL, PostgreSQL</li>
+              <li><img src={item} alt="item" className="item-icon" />Testing: JUnit, TestNG</li>
+            </ul>
           </div>
           <div className="itemExperience">
-            <h4>Septiembre 2012 - Actualidad</h4>
-            <h4>Escuelas Secundarias - Tandil, Buenos Aires, Argentina</h4>
-            <h2>Profesora de Matemática</h2>
-            <p>Me desempeño como profesora de matemática en escuelas secundarias de
-              gestión pública, en diferentes niveles, desde secundaria, adultos y terciario.
-              También he realizado suplencias de Introducción a la Física y a la Química.
-            </p>
-            <Collage />
+            <h5>Septiembre 2012 - Actualidad</h5>
+            <h5>Escuelas Secundarias - Tandil, Buenos Aires, Argentina</h5>
+            <h4>Profesora de Matemática</h4>
+            <ul>
+              <li><img src={item} alt="item" className="item-icon" />Me desempeño como profesora de matemática en escuelas secundarias de gestión pública en el nivel secundario</li>
+              <li><img src={item} alt="item" className="item-icon" />También he realizado suplencias de Introducción a la Física y a la Química en niel secundario y de Matemática en nivel adulto y terciario</li>
+            </ul>
+            <Collage images={imagesTeacher}/>
           </div>
         </section>
 
