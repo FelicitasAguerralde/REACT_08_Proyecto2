@@ -3,6 +3,7 @@
   --font-h2: 'Allura', cursive;
   --font-body: 'Poppins', sans-serif;
   --color-primary: #f0532c;
+  --color-secondary: #f4d644;
   --color-body: #222;
 }
 
@@ -316,10 +317,11 @@ footer{
   color: #fa4529;
 }
 
-.index strong{
+strong{
   color:var(--color-primary);
   font-family: var(--font-h2);
   font-size: 28px;
+  letter-spacing: 0.08em;
 }
 
 .index a{
@@ -513,7 +515,7 @@ button[type="submit"]:disabled {
   transform: scale(1.05);
 }
 
-.proyect-item a {
+.proyect-item a , .page-curriculum a{
   display: inline-block;
   margin-top: 10px;
   padding: 8px 16px;
@@ -524,7 +526,7 @@ button[type="submit"]:disabled {
   transition: background-color 0.3s ease;
 }
 
-.work-item a:hover {
+.work-item a:hover, .page-curriculum a:hover {
   background-color: #e03e25;
 }
 
@@ -546,15 +548,8 @@ button[type="submit"]:disabled {
   transform: scale(1.2);
 }
 
-.page-curriculum .itemExperience li{
-  list-style-type: none;
-}
 
-.item-icon{
-  width: 10px;
-  height: 10px;
-  margin-right: 10px;
-}
+
 /*---------------Curriculum---------------*/
 
 .page-curriculum{
@@ -565,6 +560,7 @@ button[type="submit"]:disabled {
 
 .page-curriculum h4{
   font-size: 20px;
+  letter-spacing: 1px;
 }
 
 .page-curriculum h2{
@@ -575,8 +571,165 @@ button[type="submit"]:disabled {
   font-size: 30px;
 }
 
-/*---------------Collage---------------*/
+.page-curriculum li{
+  font-size: 20px;
+  font-family: var(--font-body);
+}
 
+.description{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.description ul{
+  padding-right: 30px;
+}
+
+.page-curriculum .item-experience li{
+  list-style-type: none;
+  margin-bottom: 10px;
+  margin: 0%;
+}
+
+.description-student{
+  margin-bottom: 3%;
+}
+
+.description-student li{
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+section.experience{
+  margin-top: 0%;
+}
+
+.experience h1{
+  z-index: 3;
+  position: relative;
+}
+
+.background-experience{
+  position: absolute;
+  top: 30%;
+  left: 25%;
+  width: 50%;
+  height: 10%;
+  object-fit: cover;
+}
+
+.page-curriculum li {
+  list-style-type: none;
+  margin-bottom: 10px;
+  margin-left: 0;
+  position: relative;
+  padding-left: 25px;
+}
+
+.page-curriculum li::before {
+  content: "";
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  /*background-image: url('./assets/img/icon/item.svg');*/
+  background-size: contain;
+  background-repeat: no-repeat;
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.page-curriculum section{
+  margin-bottom: 2%;
+}
+
+/*---------------Soft Skills---------------*/
+
+.skills{
+  display: flex;
+  flex-direction:row;
+  justify-content: center;
+  background-image: url(./assets/img/background-soft-skills.jpg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.soft-skills h5, .hard-skills h5{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #e03e25;
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  color: #fff;
+  text-align: center;
+  padding: 8px;
+  line-height: 20px;
+  margin: 30px;
+  font-weight: bolder;
+  text-transform: capitalize;
+  box-shadow: 
+    0 8px 20px rgba(0, 0, 0, 0.3),
+    0 0 0 5px rgba(255, 255, 255, 0.5),
+    0 0 0 10px rgba(224, 62, 37, 0.2);
+  
+  transition: all 0.4s cubic-bezier(0.2, 0.8, 0.3, 1.1);
+  transform-style: preserve-3d;
+  position: relative;
+  z-index: 1;
+}
+
+.soft-skills h5::before ,.hard-skills h5::before{
+  content: '';
+  position: absolute;
+  top: -5px;
+  left: -5px;
+  right: -5px;
+  bottom: -5px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.1);
+  z-index: -1;
+  filter: blur(5px);
+}
+
+.soft-skills h5:hover, .hard-skills h5:hover {
+  transform: scale(1.1) translateY(-10px);
+  box-shadow: 
+    0 15px 30px rgba(0, 0, 0, 0.4),
+    0 0 0 5px rgba(255, 255, 255, 0.6),
+    0 0 0 15px rgba(224, 62, 37, 0.1);
+}
+
+.hard-skills h5{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--color-secondary);
+  color: #000;
+  width: 100px;
+  height: 100px;
+}
+.hard-skills h5 img{
+  width: 50px;
+  height: 50px;
+}
+
+.hard-skills-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+
+/*---------------Collage---------------*/
 .collage-section {
   width: 100%;
   overflow: hidden;
@@ -598,8 +751,8 @@ button[type="submit"]:disabled {
 }
 
 .collage-item {
-  min-width: 120px;
-  height: 90px;
+  min-width: 150px;
+  height: 120px;
   margin: 0 10px;
   overflow: hidden;
   border-radius: 8px;
@@ -618,9 +771,8 @@ button[type="submit"]:disabled {
   object-fit: cover;
 }
 
-/* Animaciones más lentas */
 .row1 {
-  animation: slideLeft 40s linear infinite; /* Más lento */
+  animation: slideLeft 40s linear infinite;
 }
 
 @keyframes slideLeft {
@@ -628,12 +780,31 @@ button[type="submit"]:disabled {
   100% { transform: translateX(-50%); }
 }
 
-/* Pausar animación al hacer hover */
+.collage-student .collage-item {
+  width: 300px;
+  height: 300px;
+}
+
+.collage-student .collage-image {
+  filter: grayscale(20%);
+}
+
+.collage-student .row1 {
+  display: flex;
+  animation: slideRight 50s linear infinite;
+  width: max-content;
+}
+
+@keyframes slideRight {
+  0% { transform: translateX(-50%); }
+  100% { transform: translateX(0); }
+}
+
 .collage-row:hover {
   animation-play-state: paused;
 }
 
-/* Efecto de opacidad al pasar el mouse */
 .collage-item:hover .collage-image {
   opacity: 0.9;
 }
+
