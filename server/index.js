@@ -122,7 +122,7 @@ app.get("/api/works", (req, res) => {
     {
       id: 1,
       title: "Cuatro en Linea",
-      image: "/images/work1.png",
+      image: "/img/work1.png",
       url: "https://www.google.com",
       tecnologies: ["HTML5", "CSS3", "JavaScript"],
       category: "Desarrollo web",
@@ -132,7 +132,7 @@ app.get("/api/works", (req, res) => {
     {
       id: 2,
       title: "Spidey",
-      image: "/images/work2.png",
+      image: "/img/work2.png",
       url: "https://www.google.com",
       tecnologies: ["HTML5", "CSS3", "JavaScript"],
       category: "Desarrollo web",
@@ -142,7 +142,7 @@ app.get("/api/works", (req, res) => {
     {
       id: 3,
       title: "Viajes Compartidos",
-      image: "/images/work3.png",
+      image: "/img/work3.png",
       url: "https://www.google.com",
       tecnologies: ["Angular", "ApiRest", "Bootstrap"],
       category: "Desarrollo web",
@@ -152,7 +152,7 @@ app.get("/api/works", (req, res) => {
     {
       id: 4,
       title: "Yoga y Pilates",
-      image: "/images/work4.png",
+      image: "/img/work4.png",
       url: "https://www.google.com",
       tecnologies: ["HTML5", "CSS3", "JavaScript"],
       category: "Desarrollo web",
@@ -161,18 +161,18 @@ app.get("/api/works", (req, res) => {
     {
       id: 5,
       title: "Popcorn Film",
-      image: "/images/work5.png",
+      image: "/img/work5.png",
       url: "https://www.google.com",
-      tecnologies: ["React", "CSS3", "Javascript"],
+      tecnologies: ["React", "CSS3", "JavaScript"],
       category: "Desarrollo web",
       description: "Página web de colección de películas favoritas, desarrollada en el curso de Udemy 'Master en React: Aprender ReactJS, Hooks, MERN, NodeJS, JWT+'. Cuenta con una sección para guardar las características de las películas, así como un buscador por título.",
     },
     {
       id: 6,
       title: "Trabajo 6",
-      image: "/images/work6.png",
+      image: "/img/work6.png",
       url: "https://www.google.com",
-      tecnologies: ["React", "Node.js", "Express"],
+      tecnologies: ["React"],
       category: "Desarrollo web",
       description: "Descripción del trabajo 6",
     },

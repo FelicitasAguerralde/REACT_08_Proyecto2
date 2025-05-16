@@ -1,9 +1,42 @@
 import React, { useEffect, useState } from 'react';
+import asterisk from '../assets/img/asterisk.svg';
+import angularIcon from '../assets/img/icon/angular.svg';
+import cssIcon from '../assets/img/icon/css.svg';
+import dockerIcon from '../assets/img/icon/docker.svg';
+import htmlIcon from '../assets/img/icon/html.svg';
+import javaIcon from '../assets/img/icon/java.svg';
+import javascriptIcon from '../assets/img/icon/javascript.svg';
+import mysqlIcon from '../assets/img/icon/mysql.svg';
+import phpIcon from '../assets/img/icon/php.svg';
+import postgresqlIcon from '../assets/img/icon/postgreSQL.svg';
+import reactIcon from '../assets/img/icon/react.svg';
+import springBootIcon from '../assets/img/icon/springBoot.svg';
+import testIcon from '../assets/img/icon/test.svg';
+import apiRestIcon from '../assets/img/icon/apiRest.svg';
+import bootstrapIcon from '../assets/img/icon/bootstrap.svg';
 
 export const Portfolio = () => {
   const [works, setWorks] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
+
+  const technologyIcons = {
+    'HTML5': htmlIcon,
+    'CSS3': cssIcon,
+    'JavaScript': javascriptIcon,
+    'Java': javaIcon,
+    'PHP': phpIcon,
+    'Angular': angularIcon,
+    'React': reactIcon,
+    'MySQL': mysqlIcon,
+    'PostgreSQL': postgresqlIcon,
+    'Docker': dockerIcon,
+    'Spring Boot': springBootIcon,
+    'JUnit': testIcon,
+    'TestNG': testIcon,
+    'ApiRest': apiRestIcon,
+    'Bootstrap': bootstrapIcon
+  };
 
   useEffect(() => {
     const fetchWorks = async () => {
@@ -40,11 +73,16 @@ export const Portfolio = () => {
 
   return (
     <div className="page">
-      <h2 className="heading">Portfolio</h2>
-      <section className="works-container">
+      <span className="three-points"></span>
+      <img src={asterisk} alt="asterisk" className="asterisk asterisk-1" />
+      <img src={asterisk} alt="asterisk" className="asterisk asterisk-2" />
+      <img src={asterisk} alt="asterisk" className="asterisk asterisk-3" />
+
+      <h1>Mis Proyectos</h1>
+      <section className="proyects-container">
         {works.map((work) => (
-          <article key={work.id} className='work-item'>
-            <h2>{work.title}</h2>
+          <article key={work.id} className='proyect-item'>
+            <h4>{work.title}</h4>
             <div className="image-container">
               <img 
                 src={work.image} 
@@ -53,13 +91,25 @@ export const Portfolio = () => {
                 loading="lazy"
               />
             </div>
-            <p>{work.description}</p>
-            <p>{work.tecnologies.join(', ')}</p>
-            <p>{work.category}</p>
-            <div className='work-item-a'>
-            <a href={work.url} target="_blank" rel="noopener noreferrer">
-              Ver proyecto
-            </a>
+            <p className='proyect-item-description'>{work.description}</p>
+            <div className='proyect-item-description-container'>
+            <div className='proyect-item-tecnologies'>
+              {work.tecnologies.map((tech, index) => (
+                <img 
+                  key={index}
+                  src={technologyIcons[tech]} 
+                  alt={tech}
+                  title={tech}
+                  className="tech-icon"
+                />
+              ))}
+            </div>
+            <p className='proyect-item-category'>{work.category}</p>
+            <div className='proyect-item-a'>
+              <a href={work.url} target="_blank" rel="noopener noreferrer">
+                Ver proyecto
+              </a>
+            </div>
             </div>
           </article>
         ))}

@@ -6,7 +6,7 @@
   --color-body: #222;
 }
 
-h1, h3{
+h1, h3, h4{
   font-size: 100px;
   font-family: var(--font-h1);
   text-transform: uppercase;
@@ -32,6 +32,11 @@ h3{
   font-size: 72px;
 }
 
+h4{
+  font-size: 40px;
+  font-weight: lighter;
+}
+
 body {
   margin: 0;
   font-family: var(--font-body);
@@ -45,7 +50,7 @@ body {
   margin: 0 auto;
 }
 
-.index .about-me, .my-works, nav, footer{
+.index .about-me, .my-works, nav, footer, .page{
   padding-left: 5%;
   padding-right: 5%;
   margin-bottom: 0%;
@@ -189,7 +194,7 @@ nav a:hover {
   border-radius: 4px;
 }
 
-.index .about-me .column-left .asterisk{
+.asterisk{
   position: absolute;
   top: 85%;
   left: 33%;
@@ -406,45 +411,84 @@ button[type="submit"]:disabled {
 } 
 
 /*---------------Portfolio---------------*/
-.works-container {
+.page{
+  background-image: url(./assets/img/background-portfolio.jpg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  object-fit: cover;
+  object-position: top;
+}
+
+.page .asterisk-1{
+  position: absolute;
+  top: 35%;
+  left: 53%;
+  width: 80px;
+  height: 80px;
+}
+
+.page .asterisk-2{
+  top: 28%;
+  left: 83%;
+  width: 30px;
+  animation: rotarVariable 8s linear infinite;
+}
+
+.page .asterisk-3{
+  top: 20%;
+  left: 93%;
+  width: 20px;
+  animation: rotarVariable 10s linear infinite;
+}
+
+@keyframes rotarVariableMuyLento {
+  0% { transform: rotate(0deg); }
+  25% { transform: rotate(30deg); }
+  50% { transform: rotate(-30deg); }
+  75% { transform: rotate(90deg); }
+  100% { transform: rotate(0deg); }
+}
+
+.proyects-container {
   display: flex;
   flex-wrap: wrap;
   gap: 20px;
   padding: 20px;
 }
 
-.work-item {
-  flex: 1 1 calc(33.33% - 20px);
+.proyect-item {
+  flex: 1 1 calc(30% - 40px);
   box-sizing: border-box;
-  padding: 20px;
+  padding: 35px;
   border: 1px solid #ddd;
   border-radius: 8px;
   background: white;
   box-shadow: 0 2px 4px rgba(0,0,0,0.1);
   transition: transform 0.3s ease;
-  height: 600px;
+  height: 700px;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
 }
 
-.work-item:hover {
+.proyect-item:hover {
   transform: translateY(-5px);
 }
 
-.work-item h2 {
+.proyect-item h2 {
   margin: 10px 0;
   color: #333;
 }
 
-.work-item p {
+.proyect-item p {
   color: #666;
   margin: 5px 0;
 }
 
 .image-container {
   width: 100%;
-  height: 200px;
+  height: 300px;
   overflow: hidden;
   text-align: center;
   border-radius: 4px;
@@ -461,12 +505,28 @@ button[type="submit"]:disabled {
   text-align: center;
   transition: transform 0.3s ease;
 }
+.proyect-item-description-container{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+.proyect-item-description {
+  font-family: var(--font-body);
+  display: -webkit-box;
+  -webkit-line-clamp: 4;       /* Número de líneas que quieres mostrar */
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
 
 .image-container img:hover {
   transform: scale(1.05);
 }
 
-.work-item a {
+.proyect-item a {
   display: inline-block;
   margin-top: 10px;
   padding: 8px 16px;
@@ -479,4 +539,22 @@ button[type="submit"]:disabled {
 
 .work-item a:hover {
   background-color: #e03e25;
+}
+
+.proyect-item-tecnologies {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 10px 0;
+}
+
+.tech-icon {
+  width: 30px;
+  height: 30px;
+  object-fit: contain;
+  transition: transform 0.3s ease;
+}
+
+.tech-icon:hover {
+  transform: scale(1.2);
 }

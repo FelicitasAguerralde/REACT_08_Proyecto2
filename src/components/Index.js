@@ -5,6 +5,8 @@ import profile from "../assets/img/profile.jpg";
 import work1 from "../assets/img/work1.png";
 import work2 from "../assets/img/work2.png";
 import work3 from "../assets/img/work3.png";
+import work4 from "../assets/img/work4.png";
+
 import { Header } from "./Header";
 
 export const Index = () => {
@@ -49,6 +51,7 @@ export const Index = () => {
         <img src={work1} alt="work1" />
         <img src={work2} alt="work2" />
         <img src={work3} alt="work3" />
+        <img src={work4} alt="work4" />
         </div>
         </aside>
         <aside className="column-bottom">

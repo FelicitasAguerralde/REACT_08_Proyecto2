@@ -1,4 +1,16 @@
 import React from 'react'
+import angularIcon from '../assets/img/icon/angular.svg'
+import cssIcon from '../assets/img/icon/css.svg'
+import dockerIcon from '../assets/img/icon/docker.svg'
+import htmlIcon from '../assets/img/icon/html.svg'
+import javaIcon from '../assets/img/icon/java.svg'
+import javascriptIcon from '../assets/img/icon/javascript.svg'
+import mysqlIcon from '../assets/img/icon/mysql.svg'
+import phpIcon from '../assets/img/icon/php.svg'
+import postgresqlIcon from '../assets/img/icon/postgreSQL.svg'
+import reactIcon from '../assets/img/icon/react.svg'
+import springBootIcon from '../assets/img/icon/springBoot.svg'
+import testIcon from '../assets/img/icon/test.svg'
 
 export const Curriculum = () => {
   return (
@@ -68,57 +80,57 @@ export const Curriculum = () => {
           <div className="skills-container">
             <div className="skill">
               <h3 className="heading">HTML</h3>
-              <img src="img/icons/html.svg" alt="HTML" />
+              <img src={htmlIcon} alt="HTML" />
             </div>
             <div className="skill">
               <h3 className="heading">CSS</h3>
-              <img src="img/icons/css.svg" alt="CSS" />
+              <img src={cssIcon} alt="CSS" />
             </div>
             <div className="skill">
               <h3 className="heading">JavaScript</h3>
-              <img src="img/icons/javascript.svg" alt="JavaScript" />
+              <img src={javascriptIcon} alt="JavaScript" />
             </div>
             <div className="skill">
               <h3 className="heading">Java</h3>
-              <img src="img/icons/java.svg" alt="Java" />
+              <img src={javaIcon} alt="Java" />
             </div>
             <div className="skill">
               <h3 className="heading">PHP</h3>
-              <img src="img/icons/php.svg" alt="PHP" />
+              <img src={phpIcon} alt="PHP" />
             </div>
             <div className="skill">
               <h3 className="heading">Angular</h3>
-              <img src="img/icons/angular.svg" alt="Angular" />
+              <img src={angularIcon} alt="Angular" />
             </div>
             <div className="skill">
               <h3 className="heading">React</h3>
-              <img src="img/icons/react.svg" alt="React" />
+              <img src={reactIcon} alt="React" />
             </div>
           </div>
           <div className="skills-container">
             <div className="skill">
               <h3 className="heading">MySQL</h3>
-              <img src="img/icons/mysql.svg" alt="MySQL" />
+              <img src={mysqlIcon} alt="MySQL" />
             </div>
             <div className="skill">
               <h3 className="heading">PostgreSQL</h3>
-              <img src="img/icons/postgreSQL.svg" alt="PostgreSQL" />
+              <img src={postgresqlIcon} alt="PostgreSQL" />
             </div>
             <div className="skill">
               <h3 className="heading">Docker</h3>
-              <img src="img/icons/docker.svg" alt="Docker" />
+              <img src={dockerIcon} alt="Docker" />
             </div>
             <div className="skill">
               <h3 className="heading">Spring Boot</h3>
-              <img src="img/icons/springBoot.svg" alt="Spring Boot" />
+              <img src={springBootIcon} alt="Spring Boot" />
             </div>
             <div className="skill">
               <h3 className="heading">JUnit</h3>
-              <img src="img/icons/test.svg" alt="JUnit" />
+              <img src={testIcon} alt="JUnit" />
             </div>
             <div className="skill">
               <h3 className="heading">TestNG</h3>
-              <img src="img/icons/test.svg" alt="TestNG" />
+              <img src={testIcon} alt="TestNG" />
             </div>
           </div>
         </section>
