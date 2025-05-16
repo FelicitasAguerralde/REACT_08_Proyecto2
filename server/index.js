@@ -2,6 +2,7 @@ require("dotenv").config();
 const express = require("express");
 const nodemailer = require("nodemailer");
 const cors = require("cors");
+const path = require("path");
 const app = express();
 
 // Middleware
@@ -14,6 +15,9 @@ app.use(
 );
 
 app.use(express.json());
+
+// Servir archivos estáticos desde la carpeta public
+app.use(express.static(path.join(__dirname, '../public')));
 
 // Middleware para logging
 app.use((req, res, next) => {

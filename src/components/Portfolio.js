@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import asterisk from '../assets/img/asterisk.svg';
 import angularIcon from '../assets/img/icon/angular.svg';
+import apiRestIcon from '../assets/img/icon/apiRest.svg';
+import bootstrapIcon from '../assets/img/icon/bootstrap.svg';
 import cssIcon from '../assets/img/icon/css.svg';
 import dockerIcon from '../assets/img/icon/docker.svg';
 import htmlIcon from '../assets/img/icon/html.svg';
@@ -12,8 +14,6 @@ import postgresqlIcon from '../assets/img/icon/postgreSQL.svg';
 import reactIcon from '../assets/img/icon/react.svg';
 import springBootIcon from '../assets/img/icon/springBoot.svg';
 import testIcon from '../assets/img/icon/test.svg';
-import apiRestIcon from '../assets/img/icon/apiRest.svg';
-import bootstrapIcon from '../assets/img/icon/bootstrap.svg';
 
 export const Portfolio = () => {
   const [works, setWorks] = useState([]);
@@ -85,7 +85,7 @@ export const Portfolio = () => {
             <h4>{work.title}</h4>
             <div className="image-container">
               <img 
-                src={work.image} 
+                src={`http://localhost:5000${work.image}`}
                 alt={work.title} 
                 onError={handleImageError}
                 loading="lazy"
@@ -93,23 +93,23 @@ export const Portfolio = () => {
             </div>
             <p className='proyect-item-description'>{work.description}</p>
             <div className='proyect-item-description-container'>
-            <div className='proyect-item-tecnologies'>
-              {work.tecnologies.map((tech, index) => (
-                <img 
-                  key={index}
-                  src={technologyIcons[tech]} 
-                  alt={tech}
-                  title={tech}
-                  className="tech-icon"
-                />
-              ))}
-            </div>
-            <p className='proyect-item-category'>{work.category}</p>
-            <div className='proyect-item-a'>
-              <a href={work.url} target="_blank" rel="noopener noreferrer">
-                Ver proyecto
-              </a>
-            </div>
+              <div className='proyect-item-tecnologies'>
+                {work.tecnologies.map((tech, index) => (
+                  <img 
+                    key={index}
+                    src={technologyIcons[tech]} 
+                    alt={tech}
+                    title={tech}
+                    className="tech-icon"
+                  />
+                ))}
+              </div>
+              <p className='proyect-item-category'>{work.category}</p>
+              <div className='proyect-item-a'>
+                <a href={work.url} target="_blank" rel="noopener noreferrer">
+                  Ver proyecto
+                </a>
+              </div>
             </div>
           </article>
         ))}
