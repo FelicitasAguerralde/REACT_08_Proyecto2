@@ -5,7 +5,17 @@ const cors = require("cors");
 const path = require("path");
 const app = express();
 
-// Middleware
+// ============= CONFIGURACIÓN INICIAL =============
+const PORT = process.env.PORT || 5000;
+
+// Verificar variables de entorno
+if (!process.env.EMAIL_USER || !process.env.EMAIL_PASS) {
+  console.error("Error: Las variables de entorno EMAIL_USER y EMAIL_PASS son requeridas");
+  process.exit(1);
+}
+
+// ============= MIDDLEWARE =============
+// CORS
 app.use(
   cors({
     origin: "http://localhost:3000",
@@ -14,33 +24,19 @@ app.use(
   })
 );
 
+// JSON parser
 app.use(express.json());
 
-// Servir archivos estáticos desde la carpeta public
+// Servir archivos estáticos
 app.use(express.static(path.join(__dirname, '../public')));
 
-// Middleware para logging
+// Logging
 app.use((req, res, next) => {
   console.log(`${new Date().toISOString()} - ${req.method} ${req.url}`);
   next();
 });
 
-// Verificar variables de entorno
-if (!process.env.EMAIL_USER || !process.env.EMAIL_PASS) {
-  console.error(
-    "Error: Las variables de entorno EMAIL_USER y EMAIL_PASS son requeridas"
-  );
-  process.exit(1);
-}
-
-// Mostrar la configuración (sin mostrar la contraseña completa)
-console.log("Configuración de correo:", {
-  user: process.env.EMAIL_USER,
-  pass: process.env.EMAIL_PASS ? "Configurada" : "No configurada",
-  passLength: process.env.EMAIL_PASS ? process.env.EMAIL_PASS.length : 0,
-});
-
-// Configuración del transporter de nodemailer
+// ============= CONFIGURACIÓN DE CORREO =============
 const transporter = nodemailer.createTransport({
   service: "gmail",
   host: "smtp.gmail.com",
@@ -50,7 +46,7 @@ const transporter = nodemailer.createTransport({
     user: process.env.EMAIL_USER,
     pass: process.env.EMAIL_PASS,
   },
-  pool: true, // Mantener la conexión abierta
+  pool: true,
   maxConnections: 1,
   maxMessages: 3,
   rateDelta: 1000,
@@ -59,7 +55,7 @@ const transporter = nodemailer.createTransport({
   logger: true,
 });
 
-// Verificar la conexión del transporter
+// Verificar conexión del transporter
 transporter.verify(function (error, success) {
   if (error) {
     console.error("Error al verificar el transporter:", error);
@@ -68,7 +64,78 @@ transporter.verify(function (error, success) {
   }
 });
 
-// Endpoint para enviar correo
+// ============= DATOS =============
+const works = [
+  {
+    id: 1,
+    title: "Cuatro en Linea",
+    image: "/img/work1.png",
+    url: "https://www.google.com",
+    tecnologies: ["HTML5", "CSS3", "JavaScript"],
+    category: "Desarrollo web",
+    description:
+      "Página web de juegos en linea con una sección en la que se puede jugar el juego Cuatro en Linea on-line. Esta sección se creo utilizando un cuadro de Canvas, además se le añadió sonidos y efectos visuales para mejorar la experiencia del usuario. Además se utilizó un diseño responsive para que se pueda ver en cualquier dispositivo.",
+  },
+  {
+    id: 2,
+    title: "Spidey",
+    image: "/img/work2.png",
+    url: "https://www.google.com",
+    tecnologies: ["HTML5", "CSS3", "JavaScript"],
+    category: "Desarrollo web",
+    description:
+      "Página web de un personaje de Marvel, Spiderman, con información sobre el personaje, sus series, peliculas y videojuegos. Se utilizaron las reglas UI/UX para la disposición de los elementos de la página, creando efectos visuales en los personajes mediante spreetSheet y animaciones keyframes con CSS.",
+  },
+  {
+    id: 3,
+    title: "Viajes Compartidos",
+    image: "/img/work3.png",
+    url: "https://www.google.com",
+    tecnologies: ["Angular", "ApiRest", "Bootstrap"],
+    category: "Desarrollo web",
+    description: "Página web de reserva de viajes compartidos. Se crearon dos ApiRest, una para los viajes disponibles y otra para los autos cargados. Se utilizó Bootstrap para agilizar el desarrollo frontend. Además se utilizó un diseño responsive para que se pueda ver en cualquier dispositivo.",
+  },
+  {
+    id: 4,
+    title: "Yoga y Pilates",
+    image: "/img/work4.png",
+    url: "https://www.google.com",
+    tecnologies: ["HTML5", "CSS3", "JavaScript"],
+    category: "Desarrollo web",
+    description: "Página web desarrollada en la materia Web 2. Consta de un formulario de inscripción a las clases de yoga y pilates con validación por código captcha desarrollado en Javascript, y un panel de adminstrador que permite editar y eliminar las inscripciones. Además se utilizó un diseño resposive desarrollado con la técnica mobile first.",
+  },
+  {
+    id: 5,
+    title: "Popcorn Film",
+    image: "/img/work5.png",
+    url: "https://www.google.com",
+    tecnologies: ["React", "CSS3", "JavaScript"],
+    category: "Desarrollo web",
+    description: "Página web de colección de películas favoritas, desarrollada en el curso de Udemy 'Master en React: Aprender ReactJS, Hooks, MERN, NodeJS, JWT+'. Cuenta con una sección para guardar las características de las películas, así como un buscador por título.",
+  },
+  {
+    id: 6,
+    title: "Trabajo 6",
+    image: "/img/work6.png",
+    url: "https://www.google.com",
+    tecnologies: ["React"],
+    category: "Desarrollo web",
+    description: "Descripción del trabajo 6",
+  },
+];
+
+// ============= RUTAS =============
+// Ruta de prueba
+app.get("/api/test", (req, res) => {
+  res.json({ message: "El servidor está funcionando correctamente" });
+});
+
+// Obtener trabajos
+app.get("/api/works", (req, res) => {
+  res.json(works);
+});
+
+// Enviar correo
 app.post("/api/send-email", async (req, res) => {
   console.log("--- INICIO /api/send-email ---");
   console.log("Recibida petición de envío de correo:", req.body);
@@ -88,8 +155,6 @@ app.post("/api/send-email", async (req, res) => {
     text: `\n      Nombre: ${name}\n      Email: ${email}\n      Mensaje: ${message}\n    `,
     html: `\n      <h3>Nuevo mensaje de contacto</h3>\n      <p><strong>Nombre:</strong> ${name}</p>\n      <p><strong>Email:</strong> ${email}</p>\n      <p><strong>Mensaje:</strong></p>\n      <p>${message}</p>\n    `,
   };
-
-  console.log("Opciones de correo preparadas:", mailOptions);
 
   try {
     console.log("Intentando enviar correo...");
@@ -115,77 +180,7 @@ app.post("/api/send-email", async (req, res) => {
   }
 });
 
-// Ruta de prueba
-app.get("/api/test", (req, res) => {
-  res.json({ message: "El servidor está funcionando correctamente" });
-});
-
-// Endpoint para obtener los trabajos
-app.get("/api/works", (req, res) => {
-  const works = [
-    {
-      id: 1,
-      title: "Cuatro en Linea",
-      image: "/img/work1.png",
-      url: "https://www.google.com",
-      tecnologies: ["HTML5", "CSS3", "JavaScript"],
-      category: "Desarrollo web",
-      description:
-        "Página web de juegos en linea con una sección en la que se puede jugar el juego Cuatro en Linea on-line. Esta sección se creo utilizando un cuadro de Canvas, además se le añadió sonidos y efectos visuales para mejorar la experiencia del usuario. Además se utilizó un diseño responsive para que se pueda ver en cualquier dispositivo.",
-    },
-    {
-      id: 2,
-      title: "Spidey",
-      image: "/img/work2.png",
-      url: "https://www.google.com",
-      tecnologies: ["HTML5", "CSS3", "JavaScript"],
-      category: "Desarrollo web",
-      description:
-        "Página web de un personaje de Marvel, Spiderman, con información sobre el personaje, sus series, peliculas y videojuegos. Se utilizaron las reglas UI/UX para la disposición de los elementos de la página, creando efectos visuales en los personajes mediante spreetSheet y animaciones keyframes con CSS.",
-    },
-    {
-      id: 3,
-      title: "Viajes Compartidos",
-      image: "/img/work3.png",
-      url: "https://www.google.com",
-      tecnologies: ["Angular", "ApiRest", "Bootstrap"],
-      category: "Desarrollo web",
-      description: "Página web de reserva de viajes compartidos. Se crearon dos ApiRest, una para los viajes disponibles y otra para los autos cargados. Se utilizó Bootstrap para agilizar el desarrollo frontend. Además se utilizó un diseño responsive para que se pueda ver en cualquier dispositivo.",
-
-    },
-    {
-      id: 4,
-      title: "Yoga y Pilates",
-      image: "/img/work4.png",
-      url: "https://www.google.com",
-      tecnologies: ["HTML5", "CSS3", "JavaScript"],
-      category: "Desarrollo web",
-      description: "Página web desarrollada en la materia Web 2. Consta de un formulario de inscripción a las clases de yoga y pilates con validación por código captcha desarrollado en Javascript, y un panel de adminstrador que permite editar y eliminar las inscripciones. Además se utilizó un diseño resposive desarrollado con la técnica mobile first.",
-    },
-    {
-      id: 5,
-      title: "Popcorn Film",
-      image: "/img/work5.png",
-      url: "https://www.google.com",
-      tecnologies: ["React", "CSS3", "JavaScript"],
-      category: "Desarrollo web",
-      description: "Página web de colección de películas favoritas, desarrollada en el curso de Udemy 'Master en React: Aprender ReactJS, Hooks, MERN, NodeJS, JWT+'. Cuenta con una sección para guardar las características de las películas, así como un buscador por título.",
-    },
-    {
-      id: 6,
-      title: "Trabajo 6",
-      image: "/img/work6.png",
-      url: "https://www.google.com",
-      tecnologies: ["React"],
-      category: "Desarrollo web",
-      description: "Descripción del trabajo 6",
-    },
-  ];
-
-  res.json(works);
-});
-
-const PORT = process.env.PORT || 5000;
+// ============= INICIAR SERVIDOR =============
 app.listen(PORT, () => {
   console.log(`Servidor corriendo en el puerto ${PORT}`);
   console.log("Configuración CORS:", {

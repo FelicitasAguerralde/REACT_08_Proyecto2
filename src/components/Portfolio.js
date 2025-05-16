@@ -77,7 +77,6 @@ export const Portfolio = () => {
       <img src={asterisk} alt="asterisk" className="asterisk asterisk-1" />
       <img src={asterisk} alt="asterisk" className="asterisk asterisk-2" />
       <img src={asterisk} alt="asterisk" className="asterisk asterisk-3" />
-
       <h1>Mis Proyectos</h1>
       <section className="proyects-container">
         {works.map((work) => (

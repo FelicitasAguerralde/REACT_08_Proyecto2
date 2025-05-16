@@ -37,6 +37,11 @@ h4{
   font-weight: lighter;
 }
 
+p{
+  font-size: 18px;
+  font-family: var(--font-body);
+}
+
 body {
   margin: 0;
   font-family: var(--font-body);
@@ -50,7 +55,7 @@ body {
   margin: 0 auto;
 }
 
-.index .about-me, .my-works, nav, footer, .page{
+.index .about-me, .my-works, nav, footer, .page, .page-curriculum{
   padding-left: 5%;
   padding-right: 5%;
   margin-bottom: 0%;
@@ -318,25 +323,6 @@ footer{
 }
 
 
-.page .heading,
-.index .heading{
-  font-size: 40px;
-  font-weight: 400;
-  color: #333;
-  margin-bottom: 0;
-}
-
-.page .heading{
-  font-size: 55px;
-  font-weight: bold;
-}
-
-.index .last-works p{
-  font-size: 18px;
-  color:  rgb(98, 97, 97);
-}
-
-
 /*---------------Formulario de contacto---------------*/
 .contact-container {
   max-width: 600px;
@@ -481,11 +467,6 @@ button[type="submit"]:disabled {
   color: #333;
 }
 
-.proyect-item p {
-  color: #666;
-  margin: 5px 0;
-}
-
 .image-container {
   width: 100%;
   height: 300px;
@@ -516,7 +497,7 @@ button[type="submit"]:disabled {
 .proyect-item-description {
   font-family: var(--font-body);
   display: -webkit-box;
-  -webkit-line-clamp: 4;       /* Número de líneas que quieres mostrar */
+  -webkit-line-clamp: 4;
   -webkit-box-orient: vertical;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -557,4 +538,86 @@ button[type="submit"]:disabled {
 
 .tech-icon:hover {
   transform: scale(1.2);
+}
+/*---------------Curriculum---------------*/
+
+.page-curriculum{
+  background-image: url(./assets/img/background-index-about-me.jpg);
+  background-size: cover;
+  background-position: center;
+}
+
+.page-curriculum h4{
+  font-size: 20px;
+}
+
+.page-curriculum h2{
+  font-size: 42px;
+}
+
+.page-curriculum h3{
+  font-size: 30px;
+}
+
+/*---------------Collage---------------*/
+
+.collage-section {
+  width: 100%;
+  overflow: hidden;
+  margin: 1rem 0;
+  background-color: transparent;
+}
+
+.collage-carousel-container {
+  width: 100%;
+  overflow: hidden;
+  margin: 0.5rem 0;
+}
+
+.collage-row {
+  display: flex;
+  width: max-content;
+  white-space: nowrap;
+  padding: 5px 0;
+}
+
+.collage-item {
+  min-width: 120px;
+  height: 90px;
+  margin: 0 10px;
+  overflow: hidden;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.collage-item:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.collage-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Animaciones más lentas */
+.row1 {
+  animation: slideLeft 40s linear infinite; /* Más lento */
+}
+
+@keyframes slideLeft {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+/* Pausar animación al hacer hover */
+.collage-row:hover {
+  animation-play-state: paused;
+}
+
+/* Efecto de opacidad al pasar el mouse */
+.collage-item:hover .collage-image {
+  opacity: 0.9;
 }
