@@ -17,10 +17,10 @@ const Nav = () => {
         </li>
         <li>
           <NavLink
-            to="/portfolio"
+            to="/proyects"
             className={({ isActive }) => (isActive ? "active" : "")}
           >
-            Portfolio
+            Proyectos
           </NavLink>
         </li>
         <li>

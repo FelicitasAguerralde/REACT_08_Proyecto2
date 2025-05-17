@@ -6,7 +6,7 @@ import { Curriculum } from "../components/Curriculum";
 import { Footer } from "../components/Footer";
 import { Index } from "../components/Index";
 import Nav from "../components/Nav";
-import { Portfolio } from "../components/Portfolio";
+import { Proyects } from "../components/Proyects";
 import { Services } from "../components/Services";
 
 export const AppRouter = () => {
@@ -16,7 +16,7 @@ export const AppRouter = () => {
       <section className="content">
         <Routes>
           <Route path="/" element={<Index />} />
-          <Route path="/portfolio" element={<Portfolio />} />
+          <Route path="/proyects" element={<Proyects />} />
           <Route path="/services" element={<Services />} />
           <Route path="/curriculum" element={<Curriculum />} />
           <Route path="/contact" element={<Contact />} />

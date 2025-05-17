@@ -44,20 +44,16 @@ export const Index = () => {
           </aside>
         </section>
         <section className="my-works">
-          <aside className="column-top">
-            <span className="three-points"></span>
+        <span className="three-points"></span>
+            <h1>Mis Proyectos</h1>
             <div className="my-works-container">
               <img src={work1} alt="work1" />
               <img src={work2} alt="work2" />
               <img src={work3} alt="work3" />
               <img src={work4} alt="work4" />
             </div>
-          </aside>
-          <aside className="column-bottom">
-            <h1>Mis Proyectos</h1>
-            <p>Te invito a conocer mis proyectos.</p>
+            <p>Te invito a conocer mis más de mis proyectos.</p>
             <div className="arrow-unicode"></div>
-          </aside>
         </section>
       </div>
     </>

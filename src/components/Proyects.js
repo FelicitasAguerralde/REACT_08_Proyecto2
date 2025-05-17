@@ -14,7 +14,7 @@ import reactIcon from "../assets/img/icon/react.svg";
 import springBootIcon from "../assets/img/icon/springBoot.svg";
 import testIcon from "../assets/img/icon/test.svg";
 
-export const Portfolio = () => {
+export const Proyects = () => {
   const [works, setWorks] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
