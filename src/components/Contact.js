@@ -15,7 +15,7 @@ export const Contact = () => {
       ...formData,
       [e.target.name]: e.target.value
     });
-    // Limpiar mensajes de error cuando el usuario empieza a escribir
+
     if (status === 'error') {
       setStatus('');
       setErrorMessage('');
@@ -27,7 +27,7 @@ export const Contact = () => {
     setStatus('enviando');
     setErrorMessage('');
 
-    console.log('Enviando datos:', formData); // Log para depuración
+    //console.log('Enviando datos:', formData);
 
     try {
       const response = await fetch('http://localhost:5000/api/send-email', {
@@ -39,10 +39,10 @@ export const Contact = () => {
         body: JSON.stringify(formData),
       });
 
-      console.log('Respuesta del servidor:', response.status); // Log para depuración
+      //console.log('Respuesta del servidor:', response.status);
 
       const data = await response.json();
-      console.log('Datos recibidos:', data); // Log para depuración
+      //console.log('Datos recibidos:', data);
 
       if (response.ok) {
         setStatus('exitoso');
@@ -52,7 +52,7 @@ export const Contact = () => {
         setErrorMessage(data.error || 'Error al enviar el mensaje');
       }
     } catch (error) {
-      console.error('Error completo:', error); // Log detallado del error
+      //console.error('Error completo:', error);
       setStatus('error');
       setErrorMessage('No se pudo conectar con el servidor. Por favor, verifica que el servidor esté corriendo en http://localhost:5000');
     }
