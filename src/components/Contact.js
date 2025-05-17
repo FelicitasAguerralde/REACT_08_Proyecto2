@@ -60,9 +60,10 @@ export const Contact = () => {
 
   return (
     <div className="contact-container">
-      <h2 className="heading">Contacto</h2>
-      <div className="line"></div>
-      
+      <div className="contact-title">
+      <span className="three-points"></span>
+      <h1>Contacto</h1>
+      </div>
       <form onSubmit={handleSubmit} className="contact-form">
         <div className="form-group">
           <label htmlFor="name">Nombre:</label>
