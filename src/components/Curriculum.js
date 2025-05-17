@@ -119,56 +119,18 @@ export const Curriculum = () => {
             <ul>
               <li>
                 Me desempeño como <strong>profesora de matemática </strong> en
-                escuelas secundarias de gestión pública en el nivel secundario
+                escuelas secundarias de gestión pública en el nivel secundario.
               </li>
               <li>
                 También he realizado suplencias de Introducción a la Física y a
                 la Química en nivel secundario, y de Matemática en nivel adulto
-                y terciario
+                y terciario.
               </li>
             </ul>
             <Collage images={imagesTeacher} />
           </div>
         </div>
-      </section>
-
-      <section className="summary">
-        <span className="three-points"></span>
-        <h1>RESUMEN PROFESIONAL</h1>
-        <h4>Desarrolladora Full-Stack en Formación</h4>
-        <p>
-          Estudiante avanzada de Desarrollo de Aplicaciones | Java, Spring Boot,
-          SQL
-        </p>
-        <div>
-          <section>
-            <h3>Experiencia Técnica</h3>
-            <ul>
-              <li>Desarrollo de aplicaciones con Java, Spring Boot</li>
-              <li>Bases de datos relacionales (MySQL, PostgreSQL)</li>
-              <li>Frontend con React, HTML/CSS, JavaScript</li>
-            </ul>
-          </section>
-
-          <section>
-            <h3>Objetivo Profesional</h3>
-            <p>
-              Integrar un equipo profesional donde pueda contribuir con mis
-              habilidades técnicas y aprender de proyectos desafiantes.
-            </p>
-          </section>
-
-          <section>
-            <h3>Fortalezas</h3>
-            <ul>
-              <li>Compromiso y pasión por la programación</li>
-              <li>Habilidades de comunicación y trabajo en equipo</li>
-              <li>Enfoque en soluciones eficientes y escalables</li>
-            </ul>
-          </section>
-        </div>
-
-        <Link to="https://github.com/relicitasAguerralde" target="_blank">
+        <Link to="https://github.com/felicitasAguerralde" target="_blank">
           <h4>Ver Mi Curriculum en GitHub</h4>
         </Link>
       </section>
