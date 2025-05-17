@@ -131,7 +131,7 @@ export const Curriculum = () => {
           </div>
         </div>
         <Link to="https://github.com/felicitasAguerralde" target="_blank">
-          <h4>Ver Mi Curriculum en GitHub</h4>
+          <p>Ver Mi Curriculum en GitHub</p>
         </Link>
       </section>
 
@@ -159,43 +159,69 @@ export const Curriculum = () => {
         <h3>Habilidades duras</h3>
         <div className="hard-skills-container">
           <div className="skill">
-            <h5>HTML <img src={htmlIcon} alt="HTML" /></h5>
+            <h5>
+              HTML <img src={htmlIcon} alt="HTML" />
+            </h5>
           </div>
           <div>
-            <h5>CSS <img src={cssIcon} alt="CSS" /></h5>
+            <h5>
+              CSS <img src={cssIcon} alt="CSS" />
+            </h5>
           </div>
           <div className="skill">
-            <h5>JavaScript <img src={javascriptIcon} alt="JavaScript" /></h5>
+            <h5>
+              JavaScript <img src={javascriptIcon} alt="JavaScript" />
+            </h5>
           </div>
           <div className="skill">
-            <h5>Java <img src={javaIcon} alt="Java" /></h5> 
+            <h5>
+              Java <img src={javaIcon} alt="Java" />
+            </h5>
           </div>
           <div className="skill">
-            <h5>PHP <img src={phpIcon} alt="PHP" /></h5> 
+            <h5>
+              PHP <img src={phpIcon} alt="PHP" />
+            </h5>
           </div>
           <div className="skill">
-            <h5>Angular <img src={angularIcon} alt="Angular" /></h5>
+            <h5>
+              Angular <img src={angularIcon} alt="Angular" />
+            </h5>
           </div>
           <div className="skill">
-            <h5>React <img src={reactIcon} alt="React" /></h5>
+            <h5>
+              React <img src={reactIcon} alt="React" />
+            </h5>
           </div>
           <div className="skill">
-            <h5>MySQL <img src={mysqlIcon} alt="MySQL" /></h5> 
+            <h5>
+              MySQL <img src={mysqlIcon} alt="MySQL" />
+            </h5>
           </div>
           <div className="skill">
-            <h5>PostgreSQL <img src={postgresqlIcon} alt="PostgreSQL" /></h5>
+            <h5>
+              PostgreSQL <img src={postgresqlIcon} alt="PostgreSQL" />
+            </h5>
           </div>
           <div className="skill">
-            <h5>Docker <img src={dockerIcon} alt="Docker" /></h5>
+            <h5>
+              Docker <img src={dockerIcon} alt="Docker" />
+            </h5>
           </div>
           <div className="skill">
-            <h5>Spring Boot <img src={springBootIcon} alt="Spring Boot" /></h5>
+            <h5>
+              Spring Boot <img src={springBootIcon} alt="Spring Boot" />
+            </h5>
           </div>
           <div className="skill">
-            <h5>JUnit <img src={testIcon} alt="JUnit" /></h5>
+            <h5>
+              JUnit <img src={testIcon} alt="JUnit" />
+            </h5>
           </div>
           <div className="skill">
-            <h5>TestNG <img src={testIcon} alt="TestNG" /></h5>
+            <h5>
+              TestNG <img src={testIcon} alt="TestNG" />
+            </h5>
           </div>
         </div>
       </section>
