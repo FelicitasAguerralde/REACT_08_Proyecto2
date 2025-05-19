@@ -62,7 +62,7 @@ export const Contact = () => {
     <div className="contact-container">
       <div className="contact-title">
       <span className="three-points"></span>
-      <h1>Contacto</h1>
+      <h3>Contacto</h3>
       </div>
       <form onSubmit={handleSubmit} className="contact-form">
         <div className="form-group">

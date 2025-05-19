@@ -5,8 +5,8 @@ import work1 from "../assets/img/work1.png";
 import work2 from "../assets/img/work2.png";
 import work3 from "../assets/img/work3.png";
 import work4 from "../assets/img/work4.png";
-
-import { Header } from "./Header";
+import arrow from "../assets/img/icon/arrow.svg";
+import { Header } from "../components/layout/Header";
 
 export const Index = () => {
   return (
@@ -38,22 +38,35 @@ export const Index = () => {
               sitio o aplicación web, tener más visibilidad y relevancia en
               internet.
             </p>
-            <div className="arrow-unicode">
-              <Link to="/aboutme">→</Link>
+            <div className="arrow-right">
+              <Link to="/aboutme">
+                <img src={arrow} alt="arrow" />
+              </Link>
             </div>
           </aside>
         </section>
         <section className="my-works">
-        <span className="three-points"></span>
-            <h1>Mis Proyectos</h1>
-            <div className="my-works-container">
-              <img src={work1} alt="work1" />
-              <img src={work2} alt="work2" />
-              <img src={work3} alt="work3" />
-              <img src={work4} alt="work4" />
-            </div>
-            <p>Te invito a conocer mis más de mis proyectos.</p>
-            <div className="arrow-unicode"></div>
+          <span className="three-points"></span>
+          <h3>Mis Proyectos</h3>
+          <p>
+            Te invito a conocer mis proyectos. Algunos de ellos fueron
+            realizados para trabajos prácticos de la carrera y otros son
+            proyectos de cursos en los que me he capacitado para el uso de
+            nuevas tecnologías. En cada proyecto podrás ver una breve
+            descripción y las tecnologías utilizadas, además podrás acceder a la
+            página de cada proyecto.
+          </p>
+          <div className="my-works-container">
+            <img src={work1} alt="work1" />
+            <img src={work2} alt="work2" />
+            <img src={work3} alt="work3" />
+            <img src={work4} alt="work4" />
+          </div>
+          <div className="arrow-right">
+            <Link to="/proyects">
+              <img src={arrow} alt="arrow" />
+            </Link>
+          </div>
         </section>
       </div>
     </>

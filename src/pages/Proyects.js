@@ -73,7 +73,7 @@ export const Proyects = () => {
   return (
     <div className="page">
       <span className="three-points"></span>
-      <h1>Mis Proyectos</h1>
+      <h3>Mis Proyectos</h3>
       <section className="proyects-container">
         {works.map((work) => (
           <article key={work.id} className="proyect-item">
