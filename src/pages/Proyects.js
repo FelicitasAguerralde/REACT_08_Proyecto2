@@ -13,6 +13,7 @@ import postgresqlIcon from "../assets/img/icon/postgreSQL.svg";
 import reactIcon from "../assets/img/icon/react.svg";
 import springBootIcon from "../assets/img/icon/springBoot.svg";
 import testIcon from "../assets/img/icon/test.svg";
+import ButtonLink from "../components/ui/Button";
 
 export const Proyects = () => {
   const [works, setWorks] = useState([]);
@@ -100,11 +101,15 @@ export const Proyects = () => {
                 ))}
               </div>
               <p className="proyect-item-category">{work.category}</p>
-              <div className="proyect-item-a">
-                <a href={work.url} target="_blank" rel="noopener noreferrer">
+              {work.url && (
+                <ButtonLink
+                  to={work.url}
+                  className="button"
+                  external={true}
+                >
                   Ver proyecto
-                </a>
-              </div>
+                </ButtonLink>
+              )}
             </div>
           </article>
         ))}

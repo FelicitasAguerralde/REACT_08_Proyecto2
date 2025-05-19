@@ -70,7 +70,7 @@ const works = [
     id: 1,
     title: "Cuatro en Linea",
     image: "/img/work1.png",
-    url: "https://www.google.com",
+    url: "https://cuatroenlinea.netlify.app",
     tecnologies: ["HTML5", "CSS3", "JavaScript"],
     category: "Desarrollo web",
     description:
@@ -90,7 +90,7 @@ const works = [
     id: 3,
     title: "Viajes Compartidos",
     image: "/img/work3.png",
-    url: "https://www.google.com",
+    url: "https://viajescompartidos.netlify.app",
     tecnologies: ["Angular", "ApiRest", "Bootstrap"],
     category: "Desarrollo web",
     description: "Página web de reserva de viajes compartidos. Se crearon dos ApiRest, una para los viajes disponibles y otra para los autos cargados. Se utilizó Bootstrap para agilizar el desarrollo frontend. Además se utilizó un diseño responsive para que se pueda ver en cualquier dispositivo.",

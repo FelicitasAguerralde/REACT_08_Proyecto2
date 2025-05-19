@@ -25,14 +25,6 @@ const Nav = () => {
         </li>
         <li>
           <NavLink
-            to="/services"
-            className={({ isActive }) => (isActive ? "active" : "")}
-          >
-            Servicios
-          </NavLink>
-        </li>
-        <li>
-          <NavLink
             to="/curriculum"
             className={({ isActive }) => (isActive ? "active" : "")}
           >

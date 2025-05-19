@@ -28,6 +28,7 @@ import reactIcon from "../assets/img/icon/react.svg";
 import springBootIcon from "../assets/img/icon/springBoot.svg";
 import testIcon from "../assets/img/icon/test.svg";
 import { Collage } from "../components/ui/Collage";
+import DownloadButton from "../components/ui/DownloadButton";
 import Skill from "../components/ui/IconPill";
 
 export const Curriculum = () => {
@@ -80,9 +81,9 @@ export const Curriculum = () => {
         <p>
           Soy estudiante de la carrera{" "}
           <strong>
-            Tecnicatura Universitaria en Desarrollo de Aplicaciones Informáticas{" "}
+            Tecnicatura Universitaria en Desarrollo de Aplicaciones Informáticas
           </strong>
-          de la Universidad Nacional del Centro de la Provinicia de Buenos Aire
+          de la Universidad Nacional del Centro de la Provincia de Buenos Aires
           en la ciudad de Tandil, Prov. Buenos Aires, Argentina.
         </p>
         <p>
@@ -142,12 +143,12 @@ export const Curriculum = () => {
           <Skill name="TestNG" icon={testIcon} alt="TestNG" />
         </div>
       </section>
-      <a
-        href={`${process.env.PUBLIC_URL}/downloads/CV_FelicitasAguerralde.pdf`}
-        download="CV_FelicitasAguerralde.pdf"
-      >
-        <p>Descargar curriculum</p>
-      </a>
+      <DownloadButton
+        filePath="/downloads/CV_FelicitasAguerralde.pdf"
+        fileName="CV_FelicitasAguerralde.pdf"
+        label="Descargar curriculum"
+        className="button"
+      />
     </div>
   );
 };

@@ -7,7 +7,6 @@ import { Footer } from "../components/layout/Footer";
 import { Index } from "../pages/Index";
 import Nav from "../components/layout/Nav";
 import { Proyects } from "../pages/Proyects";
-import { Services } from "../pages/Services";
 
 export const AppRouter = () => {
   return (
@@ -16,8 +15,7 @@ export const AppRouter = () => {
       <section className="content">
         <Routes>
           <Route path="/" element={<Index />} />
-          <Route path="/proyects" element={<Proyects />} />
-          <Route path="/services" element={<Services />} />
+          <Route path="/proyects" element={<Proyects />} />{" "}
           <Route path="/curriculum" element={<Curriculum />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/aboutme" element={<AboutMe />} />

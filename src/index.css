@@ -488,8 +488,7 @@ button[type="submit"]:disabled {
   transform: scale(1.05);
 }
 
-.proyect-item a,
-.page-curriculum a {
+.button {
   display: inline-block;
   margin-top: 10px;
   padding: 8px 16px;
@@ -502,7 +501,7 @@ button[type="submit"]:disabled {
 }
 
 .work-item a:hover,
-.page-curriculum a:hover {
+.button:hover {
   background-color: var(--color-secondary-hover);
 }
 
