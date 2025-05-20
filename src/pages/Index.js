@@ -34,7 +34,7 @@ export const Index = () => {
               creatividad con la tecnología para desarrollar experiencias
               digitales que marquen la diferencia. Siempre en constante
               aprendizaje, me mantengo actualizada con las últimas tendencias y
-              mejores prácticas en el desarrollo de software. Te ayudo acrear tu
+              mejores prácticas en el desarrollo de software. Te ayudo a crear tu
               sitio o aplicación web, tener más visibilidad y relevancia en
               internet.
             </p>

@@ -208,10 +208,10 @@ nav a:hover {
 
 .index .about-me .column-right{
   padding-top: 5%;
-  padding-right: 5%;
 }
-.index .about-me .column-left {
-  padding-left: 5%;
+
+.about-me .column-left{
+  padding-right: 5%;
 }
 
 .index .about-me .column-right img {
@@ -619,6 +619,39 @@ section.experience {
   background-repeat: no-repeat;
 }
 
+.hard-skills-container{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: start;
+}
+
+.frontend, .backend, .database, .testing{
+  border: 5px dotted var(--color-disabled);
+  padding: 10px;
+}
+
+.frontend, .backend{
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  justify-content: center;
+}
+
+.lenguages, .frameworks-libraries, .tools{
+  display: flex;
+  flex-direction: row;
+  align-items: start;
+  justify-content: center;
+}
+
+ .database, .testing{
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  justify-content: center;
+}
+
 .soft-skills h5,
 .hard-skills h5,
 .contact-icon {
@@ -675,23 +708,15 @@ section.experience {
   justify-content: center;
   background-color: var(--color-secondary);
   color: var(--color-body);
-  width: 100px;
-  height: 100px;
+  width: 80px;
+  height: 80px;
 }
 .hard-skills h5 img,
 .contact-icon img {
-  width: 50px;
-  height: 50px;
+  width: 30px;
+  height: 30px;
 }
 
-.hard-skills-container {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 10px;
-  max-width: 100%;
-  margin: 0 auto;
-}
 
 .contact-icons-container {
   display: flex;

@@ -128,19 +128,41 @@ export const Curriculum = () => {
         <span className="three-points"></span>
         <h3>Habilidades duras</h3>
         <div className="hard-skills-container">
-          <Skill name="HTML" icon={htmlIcon} />
-          <Skill name="CSS" icon={cssIcon} />
-          <Skill name="JavaScript" icon={javascriptIcon} />
-          <Skill name="Java" icon={javaIcon} />
-          <Skill name="PHP" icon={phpIcon} />
-          <Skill name="Angular" icon={angularIcon} />
-          <Skill name="React" icon={reactIcon} />
+          <div className="frontend">
+            <h4>Frontend</h4>
+            <div className="lenguages">
+            <Skill name="HTML" icon={htmlIcon} />
+            <Skill name="CSS" icon={cssIcon} />
+            <Skill name="JavaScript" icon={javascriptIcon} />
+            </div>
+            <div className="frameworks-libraries">
+            <Skill name="Angular" icon={angularIcon} />
+            <Skill name="React" icon={reactIcon} />
+            </div>
+          </div>
+          <div className="backend">
+            <h4>Backend</h4>
+            <div className="lenguages">
+            <Skill name="Java" icon={javaIcon} />
+            <Skill name="PHP" icon={phpIcon} />
+            </div>
+            <div className="frameworks-libraries">
+            <Skill name="Spring Boot" icon={springBootIcon} />
+            <div className="tools">
+            <Skill name="Docker" icon={dockerIcon} />
+            </div>
+            </div>
+          </div>
+          <div className="database">
+          <h4>Base de datos</h4>
           <Skill name="MySQL" icon={mysqlIcon} />
           <Skill name="PostgreSQL" icon={postgresqlIcon} />
-          <Skill name="Docker" icon={dockerIcon} />
-          <Skill name="Spring Boot" icon={springBootIcon} />
+          </div>
+          <div className="testing">
+          <h4>Testing</h4>
           <Skill name="JUnit" icon={testIcon} alt="JUnit" />
           <Skill name="TestNG" icon={testIcon} alt="TestNG" />
+          </div>
         </div>
       </section>
       <DownloadButton
