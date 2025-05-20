@@ -10,7 +10,9 @@ const PORT = process.env.PORT || 5000;
 
 // Verificar variables de entorno
 if (!process.env.EMAIL_USER || !process.env.EMAIL_PASS) {
-  console.error("Error: Las variables de entorno EMAIL_USER y EMAIL_PASS son requeridas");
+  console.error(
+    "Error: Las variables de entorno EMAIL_USER y EMAIL_PASS son requeridas"
+  );
   process.exit(1);
 }
 
@@ -28,7 +30,7 @@ app.use(
 app.use(express.json());
 
 // Servir archivos estáticos
-app.use(express.static(path.join(__dirname, '../public')));
+app.use(express.static(path.join(__dirname, "../public")));
 
 // Logging
 app.use((req, res, next) => {
@@ -74,7 +76,7 @@ const works = [
     tecnologies: ["HTML5", "CSS3", "JavaScript"],
     category: "Desarrollo web",
     description:
-      "Página web de juegos en linea con una sección en la que se puede jugar el juego Cuatro en Linea on-line. Esta sección se creo utilizando un cuadro de Canvas, además se le añadió sonidos y efectos visuales para mejorar la experiencia del usuario. Además se utilizó un diseño responsive para que se pueda ver en cualquier dispositivo.",
+    "Página web de juegos en linea con una sección en la que se puede jugar el juego Cuatro en Linea on-line. Esta sección se creo utilizando un cuadro de Canvas, además se le añadió sonidos y efectos visuales para mejorar la experiencia del usuario. Además se utilizó un diseño responsive para que se pueda ver en cualquier dispositivo.",
   },
   {
     id: 2,
@@ -93,7 +95,8 @@ const works = [
     url: "https://viajescompartidosproyect.netlify.app",
     tecnologies: ["Angular", "ApiRest", "Bootstrap"],
     category: "Desarrollo web",
-    description: "Página web de reserva de viajes compartidos. Se crearon dos ApiRest, una para los viajes disponibles y otra para los autos cargados. Se utilizó Bootstrap para agilizar el desarrollo frontend. Además se utilizó un diseño responsive para que se pueda ver en cualquier dispositivo.",
+    description:
+      "Página web de reserva de viajes compartidos. Se crearon dos ApiRest, una para los viajes disponibles y otra para los autos cargados. Se utilizó Bootstrap para agilizar el desarrollo frontend. Además se utilizó un diseño responsive para que se pueda ver en cualquier dispositivo.",
   },
   {
     id: 4,
@@ -102,7 +105,8 @@ const works = [
     url: "https://yogaproyect.netlify.app/",
     tecnologies: ["HTML5", "CSS3", "JavaScript"],
     category: "Desarrollo web",
-    description: "Página web desarrollada en la materia Web 2. Consta de un formulario de inscripción a las clases de yoga y pilates con validación por código captcha desarrollado en Javascript, y un panel de adminstrador que permite editar y eliminar las inscripciones. Además se utilizó un diseño resposive desarrollado con la técnica mobile first.",
+    description:
+      "Página web desarrollada en la materia Web 2. Consta de un formulario de inscripción a las clases de yoga y pilates con validación por código captcha desarrollado en Javascript, y un panel de adminstrador que permite editar y eliminar las inscripciones. Además se utilizó un diseño resposive desarrollado con la técnica mobile first.",
   },
   {
     id: 5,
@@ -111,7 +115,8 @@ const works = [
     url: "https://www.google.com",
     tecnologies: ["React", "CSS3", "JavaScript"],
     category: "Desarrollo web",
-    description: "Página web de colección de películas favoritas, desarrollada en el curso de Udemy 'Master en React: Aprender ReactJS, Hooks, MERN, NodeJS, JWT+'. Cuenta con una sección para guardar las características de las películas, así como un buscador por título.",
+    description:
+      "Página web de colección de películas favoritas, desarrollada en el curso de Udemy 'Master en React: Aprender ReactJS, Hooks, MERN, NodeJS, JWT+'. Cuenta con una sección para guardar las características de las películas, así como un buscador por título.",
   },
   {
     id: 6,
@@ -124,6 +129,68 @@ const works = [
   },
 ];
 
+const worksBackend = [
+  {
+    id: 1,
+    title: "Monopatines",
+    image: "/img/worksBackend1.png",
+    url: "https://github.com/FelicitasAguerralde/ARQUITECTURAS_WEB/tree/main/Microservicios_TPE",
+    tecnologies: ["Spring Boot", "MySQL", "Docker", "Swagger"],
+    category: "Arquitecturas web",
+    description:
+    "Aplicación web para la gestión de monopatines y paradas con una arquitectura de microservicios. Se utilizó Spring Boot para el desarrollo del backend y MySQL para la base de datos. Además se utilizó Docker para la contenerización de la aplicación.",
+  },
+  {
+    id: 2,
+    title: "Facturación",
+    image: "/img/worksBackend2.png",
+    url: "https://github.com/FelicitasAguerralde/ARQUI_Integrador_1_Grupo_5",
+    tecnologies: ["Java", "MySQL", "Hibernate"],
+    category: "Arquitecturas web",
+    description:
+    "Creación de esquema, carga de datos desde archivos CSV usando JDBC y consultas avanzadas SQL. Implementación de diferentes enfoques de persistencia de datos en Java, utilizando bases de datos relacionales (Derby y MySQL) y patrones de diseño como DAO y JPA/Hibernate."
+  },
+  {
+    id: 3,
+    title: "Registro de alumnos",
+    image: "/img/worksBackend3.png",
+    url: "https://github.com/FelicitasAguerralde/ARQUITECTURAS_WEB/tree/main/integrador_2",
+    tecnologies: ["Java", "MySQL", "Hibernate"],
+    category: "Arquitecturas web",
+    description:
+"Implementación de un diseño de registro de estudiantes mediante Servicios Rest y Spring Boot. Testeo de la aplicación con Postman."  
+},
+{
+  id: 4,
+  title: "Registro de alumnos",
+  image: "/img/worksBackend4.png",
+  url: "https://github.com/FelicitasAguerralde/ARQUITECTURAS_WEB/tree/main/integrador_3",
+  tecnologies: ["Spring Boot", "ApiRest", "Postman"],
+  category: "Arquitecturas web",
+  description:
+  "Desarrollo de un sistema de registro de alumnos en una universidad. Se utilizó Java para el desarrollo del backend y MySQL para la base de datos. Además se utilizó Hibernate para la persistencia de datos."
+},
+{
+  id: 5,
+  title: "Asignaciones",
+  image: "/img/worksBackend5.png",
+  url: "https://github.com/FelicitasAguerralde/GRUPO_71_PROG_3_TPE",
+  tecnologies: ["Java"],
+  category: "Algoritmos",
+  description:
+"Implementación de los algoritmos de backtracking y greedy para la asignación de tareas a procesadores."
+},
+{
+  id: 6,
+  title: "Sistema de encuestas",
+  image: "/img/worksBackend6.png",
+  url: "https://github.com/FelicitasAguerralde/PROG_2_TP_3_Sistema_Encuestas/tree/master",
+  tecnologies: ["Java"],
+  category: "Programación orientada a objetos",
+  description:
+  "Desarrollo de un sistema de encuestas mediante clases y objetos en Java."
+}
+];
 // ============= RUTAS =============
 // Ruta de prueba
 app.get("/api/test", (req, res) => {
@@ -133,6 +200,10 @@ app.get("/api/test", (req, res) => {
 // Obtener trabajos
 app.get("/api/works", (req, res) => {
   res.json(works);
+});
+
+app.get("/api/worksBackend", (req, res) => {
+  res.json(worksBackend);
 });
 
 // Enviar correo

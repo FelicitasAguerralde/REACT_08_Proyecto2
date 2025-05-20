@@ -27,6 +27,7 @@ import postgresqlIcon from "../assets/img/icon/postgreSQL.svg";
 import reactIcon from "../assets/img/icon/react.svg";
 import springBootIcon from "../assets/img/icon/springBoot.svg";
 import testIcon from "../assets/img/icon/test.svg";
+import swaggerIcon from "../assets/img/icon/swagger.svg";
 import { Collage } from "../components/ui/Collage";
 import DownloadButton from "../components/ui/DownloadButton";
 import Skill from "../components/ui/IconPill";
@@ -150,6 +151,7 @@ export const Curriculum = () => {
             <Skill name="Spring Boot" icon={springBootIcon} />
             <div className="tools">
             <Skill name="Docker" icon={dockerIcon} />
+            <Skill name="Swagger" icon={swaggerIcon} />
             </div>
             </div>
           </div>
